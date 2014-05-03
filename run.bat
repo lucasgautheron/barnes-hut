@@ -1,2 +1,2 @@
 cd bin
-phys.exe sphere > ../log.txt
+phys.exe > ../log.txt
