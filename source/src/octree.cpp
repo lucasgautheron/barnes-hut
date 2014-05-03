@@ -31,7 +31,6 @@ void OctreeNode::divide()
 {
     if(!this->leaf) return;
     leaf = false;
-    vec delta = vec(size, size, size);
 
     for(int i = 0; i < 8; ++i)
     {
