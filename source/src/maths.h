@@ -295,7 +295,6 @@ public:
     }
 };
 
-// matrices particulières
 //#define MATRIX_IDENTITY(n) (matrix().identity(n))
 #define MATRIX_IDENTITY(n) (matrix(n, n).identity(n))
 

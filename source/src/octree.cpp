@@ -57,14 +57,14 @@ void OctreeNode::divide()
     }
 }
 
-void OctreeNode::computecenterofmass()
+void OctreeNode::compute_center_of_mass()
 {
     this->g = this->mg / this->mass;
     if(!this->leaf)
     {
         for(int i = 0; i < 8; ++i)
         {
-            this->children[i]->computecenterofmass();
+            this->children[i]->compute_center_of_mass();
         }
     }
 }
@@ -100,6 +100,6 @@ int build_octree()
         octree->insert(bodies[i]);
     }
     
-    octree->computecenterofmass();
+    octree->compute_center_of_mass();
     return 1;
 }

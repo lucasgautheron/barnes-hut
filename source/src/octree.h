@@ -37,7 +37,7 @@ struct OctreeNode
     }
     void insert(Body *body, bool move = false);
     void divide();
-    void computecenterofmass();
+    void compute_center_of_mass();
 };
 
 extern OctreeNode *octree;
