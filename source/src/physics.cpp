@@ -91,7 +91,8 @@ void compute_gravity(Body *b, OctreeNode *node)
 
 void move_bodies(double dt)
 {
-    for(unsigned int i = 0; i < bodies.size(); ++i)
+    #pragma omp parallel for
+    for(int i = 0; i < bodies.size(); ++i)
     {
         bodies[i]->a = vec(0, 0, 0);
 

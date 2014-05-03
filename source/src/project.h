@@ -14,6 +14,7 @@
 #include <random>
 #include <algorithm>
 #include <ctime>
+#include <omp.h>
 
 #if defined(WIN32)
 //    #include <ppl.h>
