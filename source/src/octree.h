@@ -29,7 +29,6 @@ struct OctreeNode
     {
         midpoint = mg = g = vec(0, 0, 0);
         for(int i = 0; i < 8; ++i) children[8] = NULL;
-        bodies.reserve(1);
     }
     ~OctreeNode()
     {
