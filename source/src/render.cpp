@@ -130,20 +130,20 @@ void render_octree(OctreeNode *o)
     vec delta_z = vec(0, 0, delta.z);
 
     glBegin(GL_LINES);
-		glVertex3dv(inf.v); glVertex3dv((inf+delta_x).v);
-		glVertex3dv((inf+delta_x).v); glVertex3dv((inf+delta_x+delta_y).v);
-		glVertex3dv((inf+delta_x+delta_y).v); glVertex3dv((inf+delta_y).v);
-		glVertex3dv((inf+delta_y).v); glVertex3dv((inf).v);
+        glVertex3dv(inf.v); glVertex3dv((inf+delta_x).v);
+        glVertex3dv((inf+delta_x).v); glVertex3dv((inf+delta_x+delta_y).v);
+        glVertex3dv((inf+delta_x+delta_y).v); glVertex3dv((inf+delta_y).v);
+        glVertex3dv((inf+delta_y).v); glVertex3dv((inf).v);
 
-		glVertex3dv((inf+delta_z).v); glVertex3dv((inf+delta_x+delta_z).v);
-		glVertex3dv((inf+delta_x+delta_z).v); glVertex3dv((inf+delta_x+delta_y+delta_z).v);
-		glVertex3dv((inf+delta_x+delta_y+delta_z).v); glVertex3dv((inf+delta_y+delta_z).v);
-		glVertex3dv((inf+delta_y+delta_z).v); glVertex3dv((inf+delta_z).v);
+        glVertex3dv((inf+delta_z).v); glVertex3dv((inf+delta_x+delta_z).v);
+        glVertex3dv((inf+delta_x+delta_z).v); glVertex3dv((inf+delta_x+delta_y+delta_z).v);
+        glVertex3dv((inf+delta_x+delta_y+delta_z).v); glVertex3dv((inf+delta_y+delta_z).v);
+        glVertex3dv((inf+delta_y+delta_z).v); glVertex3dv((inf+delta_z).v);
 
-		glVertex3dv((inf).v); glVertex3dv((inf+delta_z).v);
-		glVertex3dv((inf+delta_x).v); glVertex3dv((inf+delta_z+delta_x).v);
-		glVertex3dv((inf+delta_y).v); glVertex3dv((inf+delta_z+delta_y).v);
-		glVertex3dv((inf+delta_x+delta_y).v); glVertex3dv((inf+delta_z+delta_x+delta_y).v);
+        glVertex3dv((inf).v); glVertex3dv((inf+delta_z).v);
+        glVertex3dv((inf+delta_x).v); glVertex3dv((inf+delta_z+delta_x).v);
+        glVertex3dv((inf+delta_y).v); glVertex3dv((inf+delta_z+delta_y).v);
+        glVertex3dv((inf+delta_x+delta_y).v); glVertex3dv((inf+delta_z+delta_x+delta_y).v);
     glEnd();
 }
 #endif

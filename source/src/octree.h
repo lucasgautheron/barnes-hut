@@ -6,9 +6,9 @@ struct OctreeNode;
 
 struct Body
 {
-	vec p, v, a;
-	double mass;
-	std::vector<OctreeNode *> nodes;
+    vec p, v, a;
+    double mass;
+    std::vector<OctreeNode *> nodes;
 };
 
 struct OctreeNode
@@ -29,11 +29,11 @@ struct OctreeNode
     {
         midpoint = mg = g = vec(0, 0, 0);
         for(int i = 0; i < 8; ++i) children[8] = NULL;
-		bodies.reserve(1);
+        bodies.reserve(1);
     }
     ~OctreeNode()
     {
-		if(!leaf) for(int i = 0; i < 8; ++i) if(children[i]) delete children[i];
+        if(!leaf) for(int i = 0; i < 8; ++i) if(children[i]) delete children[i];
     }
     void insert(Body *body, bool move = false);
     void divide();

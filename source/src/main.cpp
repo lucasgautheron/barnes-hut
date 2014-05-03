@@ -19,8 +19,8 @@ int main(int argc, char *argv[])
     init();
 
     generate_bodies_exp(800, GALAXY_SIZE, 3e30, vec(-GALAXY_SIZE*3, GALAXY_SIZE*0.1, 0), vec(+2.5e6, 0, 0));
-	generate_bodies_exp(400, GALAXY_SIZE, 1e30, vec(GALAXY_SIZE*3, 0, 0), vec(-2.5e6, 0, 0));
-	//generate_bodies_ring(1000, 2e11, 1.2e11, 1e10);
+    generate_bodies_exp(400, GALAXY_SIZE, 1e30, vec(GALAXY_SIZE*3, 0, 0), vec(-2.5e6, 0, 0));
+    //generate_bodies_ring(1000, 2e11, 1.2e11, 1e10);
 
     build_octree();
 
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
         render();
         
         move_bodies(10000);
-		DELETEP(octree);
+        DELETEP(octree);
         build_octree();
         
 

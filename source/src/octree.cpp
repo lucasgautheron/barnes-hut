@@ -8,8 +8,8 @@ void OctreeNode::insert(Body *body, bool move)
     {
         ++vertices_count;
         this->bodies.push_back(body);
-		body->nodes.push_back(this);
-		mass += body->mass;
+        body->nodes.push_back(this);
+        mass += body->mass;
         mg += body->p * body->mass;
     }
 
@@ -73,7 +73,7 @@ extern OctreeNode *octree;
 
 int build_octree()
 {
-	if(!octree)
+    if(!octree)
         octree = new OctreeNode();
 
     vec bmin = (1, 1, 1), bmax = (-1, -1, -1);
@@ -96,7 +96,7 @@ int build_octree()
     
     for(unsigned int i = 0; i < bodies.size(); ++i)
     {
-		bodies[i]->nodes.clear();
+        bodies[i]->nodes.clear();
         octree->insert(bodies[i]);
     }
     

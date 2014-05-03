@@ -96,7 +96,7 @@ void GPFont::PreparePixMap(int ch, FT_Face face)
 
       // trouver les coordonnées de texture où s'arreter
       // c'est un contre effet du padding:
-      float	u, v;
+      float    u, v;
       u = (float)pgpix->width / w;
       v = (float)pgpix->rows / h;
 
