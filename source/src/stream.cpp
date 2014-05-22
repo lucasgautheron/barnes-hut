@@ -340,6 +340,18 @@ int gzstream::write(const void *buf, int len)
     return len - zfile.avail_in;
 }
 
+int gzstream::printf(const char *fmt, ...)
+{
+    char d[MAXSTRLEN];
+    memset(d, 0, MAXSTRLEN);
+    va_list v;
+    va_start(v, fmt);
+    _vsnprintf(d, MAXSTRLEN, fmt, v); d[MAXSTRLEN-1] = 0;
+    int result = write((void *)d, strlen(d));
+    va_end(v);
+    return result;
+}
+
 filestream *openrawfile(const char *filename, const char *mode)
 {
     const char *found = findfile(filename, mode);

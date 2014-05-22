@@ -121,6 +121,7 @@ public:
     int read(void *buf, int len);
     bool flush();
     int write(const void *buf, int len);
+    int printf(const char *fmt, ...);
 };
 
 const char *findfile(const char *name, const char *mode);
