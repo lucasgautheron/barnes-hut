@@ -79,6 +79,16 @@ int build_octree()
 
     for(unsigned int i = 0; i < bodies.size(); ++i)
     {
+        
+        if(bodies[i]->p.x < set_min_bounds.x || bodies[i]->p.y < set_min_bounds.y || bodies[i]->p.z < set_min_bounds.z
+            || bodies[i]->p.x > set_max_bounds.x || bodies[i]->p.y > set_max_bounds.y || bodies[i]->p.z > set_max_bounds.z)
+        {
+            dbgoutf("Body %d removed, %d remaining [out of bounds]", i, bodies.size());
+            DELETEP(bodies[i]);
+            bodies.erase(bodies.begin() + i);
+            break;
+        }
+
         if(bodies[i]->p.x < bmin.x) bmin.x = bodies[i]->p.x;
         if(bodies[i]->p.y < bmin.y) bmin.y = bodies[i]->p.y;
         if(bodies[i]->p.z < bmin.z) bmin.z = bodies[i]->p.z;

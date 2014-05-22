@@ -8,6 +8,7 @@
 #define TIMESTEP 0.10
 
 extern std::vector<Body *> bodies;
+extern vec set_min_bounds, set_max_bounds;
 
 void generate_bodies_exp(int amount, double size, double mass, vec g, vec vg);
 void generate_bodies_ring(int amount, double radius, double size, double mass);

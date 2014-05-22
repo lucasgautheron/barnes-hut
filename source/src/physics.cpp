@@ -1,6 +1,7 @@
 #include "project.h"
 
 std::vector<Body *> bodies;
+vec set_min_bounds, set_max_bounds;
 
 void generate_bodies_exp(int amount, double size, double mass, vec g, vec vg)
 {
@@ -8,6 +9,9 @@ void generate_bodies_exp(int amount, double size, double mass, vec g, vec vg)
     std::exponential_distribution<double> exp_distribution(1.0);
     std::uniform_real_distribution<double> uniform_distribution(0, 1.0);
     std::uniform_int_distribution<int> uniform_idistribution(0, 1);
+
+    set_max_bounds = vec(1, 1, 1) * 7 * size;
+    set_min_bounds = -set_max_bounds;
 
     Body *blackhole = new Body();
     blackhole->mass = mass * 100000;
@@ -40,6 +44,9 @@ void generate_bodies_ring(int amount, double radius, double size, double mass)
     std::default_random_engine generator;
     std::uniform_real_distribution<double> uniform_distribution(0, 1.0);
     std::uniform_int_distribution<int> uniform_idistribution(0, 1);
+
+    set_max_bounds = vec(1, 1, 1) * 7 * size;
+    set_min_bounds = -set_max_bounds;
 
     Body *sun = new Body();
     sun->p = vec(0, 0, 0);
