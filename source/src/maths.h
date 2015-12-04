@@ -79,6 +79,7 @@ public:
     double dotxy(const vec &o) const;
 
     double norm() const;
+    double norm1() const;
     vec &normalize();
     vec &normalize(double n);
 

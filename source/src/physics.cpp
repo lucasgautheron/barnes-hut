@@ -85,7 +85,7 @@ void compute_gravity(Body *b, OctreeNode *node)
     else
     {
         if(std::find(b->nodes.begin(), b->nodes.end(), node)==b->nodes.end() // if node does not contain the current body and is small enough
-            && node->size < 0.1 * (b->a - node->g).norm())                   // then the gravity can be applied
+            && node->size < 0.1 * (b->a - node->g).norm1())                   // then the gravity can be applied
         {
             b->a += (node->g - b->p) * node->mass / (pow((node->g - b->p).norm(), 3.0));
         }

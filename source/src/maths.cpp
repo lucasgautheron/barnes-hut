@@ -28,6 +28,7 @@ double vec::dot(const vec &o) const { return x*o.x + y*o.y + z*o.z; }
 double vec::dotxy(const vec &o) const { return x*o.x + y*o.y; }
 
 double vec::norm() const { return sqrt(squaredlen()); }
+double vec::norm1() const { return abs(x) + abs(y) + abs(z); }
 vec &vec::normalize() { div(norm()); return *this; }
 vec &vec::normalize(double n) { div(norm()); mul(n); return *this; }
 
